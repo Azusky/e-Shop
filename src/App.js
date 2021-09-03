@@ -2,11 +2,33 @@
 import './App.css';
 import ProductModels from './models/Product';
 import Product from './components/product/Product';
+import ProductCard from './components/product/ProductCard';
 import MoneyModel  from "./models/Money";
 import AttributeModel from './models/Attributes';
 
+import {MenuShop} from './components/menu/Menu';
+import { DrawerShop } from './components/Drawer/Drawer';
+import clsx from 'clsx';
 
+
+// import ShopIcon from '@material-ui/icons/Shop';
+
+import AddToCartButton from './components/cart/AddToCart';
+import ShareProduct from './components/product/ShareProduct';
 function App() {
+
+  const actions = (id)=>{
+    return (
+      <>
+      {/* <IconButton aria-label="add to favorites" color="primary">
+        <ShopIcon />
+      </IconButton> */}
+      <AddToCartButton id={id}/>
+      <ShareProduct id={id}/>
+      </>
+    )
+  }
+
   let children = [
                   new ProductModels(1,'Ashly',
                                       ['https://pbs.twimg.com/media/DJZd7xNUQAA6-kY.jpg',
@@ -39,17 +61,19 @@ function App() {
                                        new AttributeModel('height',"170cm")
                                      ])
                 ]
-//   console.log(children[0].toPOJO())
-//   let p = children[2]
-//   p.price =  {
-//     standard: new MoneyModel(300.00, "USD"),
-//     discount: new MoneyModel(25.00, "USD"),
-//  }
-//  console.log(p.toPOJO())
+
   return (
     <div className='App'>
+      <DrawerShop/>
+      <MenuShop/>
+      <div>
 
-      {children.map(child => <Product product={child} mode='old'/>)}
+        {children.map(child => <ProductCard actions={actions(child.id)} {...child}/>)}
+
+      </div>
+      <hr/>
+      {/* <div>{children.map(child => <Product product={child} mode='old'/>)}</div> */}
+
 
     </div>
 

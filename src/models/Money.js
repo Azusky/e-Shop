@@ -8,8 +8,8 @@ class Money {
     }
     toPOJO(){
        return {
-            standard:this.price.standard,
-            discount:this.price.discount
+            amount:this.amount,
+            currency:this.currency
         }
     }
     toJson(){
