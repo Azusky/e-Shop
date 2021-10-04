@@ -1,0 +1,37 @@
+[
+    {
+        "name":"Tomato",
+        "price":2000,
+        "type":"fruit",
+        "description":"They are usually red, scarlet, or yellow, though green and purple varieties do exist, and they vary in shape from almost spherical to oval and elongate to pear-shaped. Each fruit contains at least two cells of small seeds surrounded by jellylike pulp. hothouse tomatoes",
+        "id":1
+    },
+    {
+        "name":"Potato",
+        "price":400,
+        "type":"potato",
+        "description":"The potato is one of some 150 tuber-bearing species of the genus Solanum (a tuber is the swollen end of an underground stem). The compound leaves are spirally arranged; each leaf is 20–30 cm (about 8–12 inches) long and consists of a terminal leaflet and two to four pairs of leaflets",
+        "id":2
+    },
+    {
+        "name":"Mango",
+        "price":600,
+        "type":"fruit",
+        "description":"A mango is a sweet tropical fruit, and it's also the name of the trees on which the fruit grows. Ripe mangoes are juicy, fleshy, and delicious. Like peaches and plums, mangoes have an inedible pit at the center. Unlike these other fruits, the skin of a mango is very tough and also inedible",
+        "id":3
+    },
+    {
+        "name":"Pineapple",
+        "price":100,
+        "type":"fruit",
+        "description":"The pineapple is a tropical plant with an edible fruit and is the most economically significant plant in the family Bromeliaceae. The pineapple is indigenous to South America, where it has been cultivated for many centuries",
+        "id":4
+    },
+    {
+        "name":"Jora Tigan",
+        "price":3000,
+        "type":"Evropianin",
+        "description":"Early modern human or anatomically modern human are terms used to distinguish Homo sapiens that are anatomically consistent with the range of phenotypes seen in contemporary humans from extinct archaic human species",
+        "id":5
+    }
+]

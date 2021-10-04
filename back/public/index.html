@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home page</h1>
+    <div id="content">
+        Here Load Content
+    </div>
+    <script>
+            fetch(`/api/products`)
+            .then(response => response.json())
+            .then(data=>{
+                let div = document.getElementById('content')
+                div.innerHTML=""
+                data.forEach(product => {
+                    div.innerHTML +=
+                    `<div>
+                        ${product.name}
+                        ${product.price}
+
+                        <button onClick="getProductDetails(${product.id})">view details</button>
+                    </div>`
+
+                })
+            })
+        const getProductDetails = (id)=>{
+            fetch(`/api/products/${id}`)
+            .then(response => response.json())
+            .then(data => {
+
+                let {name,price,type,description} = data[0]
+                let div = document.getElementById('content')
+                div.innerHTML=""
+                div.innerHTML=`
+                        <h3> Product Details</h3>
+                        <div>
+                            Name: ${name}
+                            <br/>
+                            Price: ${price}
+                            <br/>
+                            Category: ${type}
+                            <br/>
+                            Detail: ${description}
+                        </div>
+                         `
+            });
+        // let xhr = new XMLHttpRequest()
+
+        // xhr.open("GET","/api/products")
+        // xhr.onload = ()=>{
+        //     let products = JSON.parse(xhr.responseText)
+        //     console.log(products)
+        //     let div = document.getElementById('content')
+        //     products.forEach(product => {
+        //         div.innerHTML +=
+        //         `<div>
+        //             ${product.name}
+        //             ${product.price}
+
+        //              <button onClick="getProductDetails(${product.id})">view details</button>
+        //         </div>`
+
+        //     })
+
+        // }
+        // xhr.send()
+            // let xhr = new XMLHttpRequest()
+
+            // xhr.open("GET",`/api/products/${id}`)
+            // xhr.onload = ()=>{
+            //     let products = JSON.parse(xhr.responseText)
+            //     let {name,price,description} = products[0]
+            //     let div = document.getElementById('content')
+            //     div.innerHTML=""
+            //     div.innerHTML=`
+            //             <h3> Product Details</h3>
+            //             <div>
+            //                 ${name}
+            //                 ${price}
+            //                 ${description}
+            //             </div>
+            //     `
+            // }
+            // xhr.send()
+        }
+    </script>
+</body>
+</html>

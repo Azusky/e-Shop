@@ -9,7 +9,15 @@ import AttributeModel from './models/Attributes';
 import {MenuShop} from './components/menu/Menu';
 import { DrawerShop } from './components/Drawer/Drawer';
 import clsx from 'clsx';
-
+import RouterAppTest from './components/testRouter/RouterAppTest'
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   useRouteMatch,
+//   useParams
+// } from "react-router-dom";
 
 // import ShopIcon from '@material-ui/icons/Shop';
 
@@ -73,7 +81,7 @@ function App() {
       </div>
       <hr/>
       {/* <div>{children.map(child => <Product product={child} mode='old'/>)}</div> */}
-
+      <RouterAppTest></RouterAppTest>
 
     </div>
 
